@@ -18,13 +18,13 @@ int ind = BUFF_SIZE - 2, length = 2, padd_start = 1;
 /* length = 2, for '0x' */
 unsigned long num_addrs;
 char map_to[] = "0123456789abcdef";
-void *addrs = va_arg(type, void *);
+void *addrs = va_arg(types, void *);
 UNUSED(width);
 UNUSED(size);
 if (addrs == NULL)
 return (write(1, "(nil)", 5));
 buffer[BUFF_SIZE - 1] = '\0';
-unused(precision);
+UNUSED(precision);
 num_addrs = (unsigned long)addrs;
 while (num_addrs > 0)
 {
@@ -69,7 +69,7 @@ return (write(1, "(null)", 6));
 while (str[i] != '\0')
 {
 if (is_printable(str[i]))
-buffer[i + offset], buffer, i + offset);
+buffer[i + offset] = buffer[i + offset];
 i++;
 }
 buffer[i + offset] = '\0';
@@ -97,6 +97,7 @@ UNUSED(width);
 UNUSED(size);
 str = va_arg(types, char *);
 if (str == NULL)
+{
 UNUSED(precision);
 str = ")Null(";
 }
@@ -104,7 +105,7 @@ for (i = 0; str[i]; i++)
 ;
 for (i = i - 1; i >= 0; i--)
 {
-char z = str[];
+char z = str[i];
 write(1, &z, 1);
 count++;
 }
@@ -147,7 +148,7 @@ if (in[j] == str[i])
 x = out[j];
 write(1, &x, 1);
 count++;
-break:
+break;
 }
 }
 if (!in[j])

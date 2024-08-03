@@ -142,7 +142,7 @@ int flags, int width, int precision, int size)
 unsigned int l, p, i, sum;
 unsigned int a[32];
 int count;
-UNUSED(buffer)
+UNUSED(buffer);
 UNUSED(flags);
 UNUSED(width);
 UNUSED(precision);

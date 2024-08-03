@@ -23,7 +23,7 @@ int append_hexa_code(char ascii_code, char buffer[], int i)
 {
 char map_to[] = "0123456789ABCDEF";
 /*The hexa formatcode is always 2 digits long*/
-if (ascii_code *= - 1;
+if (ascii_code < 0) ascii_code *= - 1;
 buffer[i++] = '\\';
 buffer[i++] = 'x';
 buffer[i++] = map_to[ascii_code / 16];
@@ -70,5 +70,5 @@ if (size == S_LONG)
 return(num);
 else if (size == S_SHORT)
 return ((unsigned short)num);
-return ((unsigned int)num(;
+return ((unsigned int)num);
 }

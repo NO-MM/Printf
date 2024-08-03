@@ -1,7 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
-#include <stdio.h>
 #include <stdarg.h>
+#include <stdio.h>
 #include <unistd.h>
 #define UNUSED(x) (void)(x)
 #define BUFF_SIZE 1024
@@ -55,9 +55,9 @@ int print_octal(va_list types, char buffer[],
 int print_hexadecimal(va_list types, char buffer[],
                    int flags, int width, int precision, int size);
 int print_hexa_upper(va_list types, char buffer[],
-                   int flags, int width, int precision, int size);
-int print_hexa(va_list types, char buffer[],
-                   int flags, int width, int precision, int size);
+		     int flags, int width, int precision, int size);
+int print_hexa(va_list types, char buffer[], char ma0_to[],
+                     int flags, char flag_ch, int width, int precision, int size);
 /* Funciotns to handle other specifiers */
 int get_flags(const char *format, int *i);
 int get_width(const char *format, int *i, va_list list);
