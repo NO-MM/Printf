@@ -1,14 +1,14 @@
 #include "main.h"
 /************************* PRINT CHAR *************************/
 /**
-* print_char - A function that prints a char
-* @types: List a of arguments
-* @buffer: Buffer array to handle print
-* @flags:  Calculates active flags
-* @width: Width
-* @precision: Precision specification
-* @size: Size specifier
-* Return: Number of chars printed
+* print_char - A function that prints a character.
+* @types: List a of arguments.
+* @buffer: Buffer array to handle print.
+* @flags:  Calculates active flags.
+* @width: Width.
+* @precision: Precision specification.
+* @size: Size specifier.
+* Return: Number of chars printed.
 */
 int print_char(va_list types, char buffer[],
 int flags, int width, int precision, int size)
@@ -18,14 +18,14 @@ return (handle_write_char(c, buffer, flags, width, precision, size));
 }
 /************************* PRINT A STRING *************************/
 /**
-* print_string - A function that prints a string
-* @types: List a of arguments
-* @buffer: Buffer array to handle print
-* @flags:  Calculates active flags
+* print_string - A function that prints a string.
+* @types: List a of arguments.
+* @buffer: Buffer array to handle print.
+* @flags:  Calculates active flags.
 * @width: get width.
-* @precision: Precision specification
-* @size: Size specifier
-* Return: Number of chars printed
+* @precision: Precision specification.
+* @size: Size specifier.
+* Return: Number of chars printed.
 */
 int print_string(va_list types, char buffer[],
 int flags, int width, int precision, int size)
@@ -40,7 +40,7 @@ UNUSED(size);
 if (str == NULL)
 {
 str = "(null)";
- if (precision >= 6)
+if (precision >= 6)
 str = "      ";
 }
 while (str[length] != '\0')
@@ -90,17 +90,17 @@ return (write(1, "%%", 1));
 }
 /************************* PRINT INT *************************/
 /**
-* print_int - A fuction that print int
-* @types: Lista of arguments
-* @buffer: Buffer array to handle print
-* @flags:  Calculates active flags
+* print_int - A function that print int.
+* @types: Lista of arguments.
+* @buffer: Buffer array to handle print.
+* @flags: Calculates active flags.
 * @width: get width.
-* @precision: Precision specification
-* @size: Size specifier
-* Return: Number of chars printed
+* @precision: Precision specification.
+* @size: Size specifier.
+* Return: Number of chars printed.
 */
 int print_int(va_list types, char buffer[],
-        int flags, int width, int precision, int size)
+int flags, int width, int precision, int size)
 {
 int i = BUFF_SIZE - 2;
 int is_negative = 0;
@@ -122,7 +122,8 @@ buffer[i--] = (num % 10) + '0';
 num /= 10;
 }
 i++;
-return (write_number(is_negative, i, buffer, flags, width, precision, size));
+return (write_number(is_negative, i, buffer, flags,
+width, precision, size));
 }
 /************************* PRINT BINARY *************************/
 /**
@@ -136,7 +137,7 @@ return (write_number(is_negative, i, buffer, flags, width, precision, size));
 * Return: Numbers of char printed.
 */
 int print_binary(va_list types, char buffer[],
-        int flags, int width, int precision, int size)
+int flags, int width, int precision, int size)
 {
 unsigned int l, p, i, sum;
 unsigned int a[32];
